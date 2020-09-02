@@ -1,0 +1,117 @@
+# This is my First Game in PYthon
+import random
+print("\t \t \t \t\tSnake Water Gun")
+sanke = "S"
+water = "W"
+gun = "G"
+print("S is For Snake \nW is For Water \nG is For Gun")
+
+# Choice
+lst0 = ["S","G","W","W","G","W","G","S","W","S","W","G","W","G","S","W","S","W","G","W","G","S","W","S"]
+computer_choice0 = random.choice(lst0)
+lst1 = ["S","W","W","S","W","S","W","G","W","G","S","W","S","W","G","W","G","S","W","S","W","G","W","G","S","W","S"]
+computer_choice1 = random.choice(lst1)
+lst2 = ["S","W","G","S","S","W","G","W","G","S","W","S","W","G","W","G","S","W","S","W","G","W","G","S","W","S"]
+computer_choice2 = random.choice(lst2)
+lst3 = ["S","W","G","S","W","G","S","W","G","W","G","S","W","S","W","G","W","G","S","W","S","W","G","W","G","S","W","S"]
+computer_choice3 = random.choice(lst3)
+lst4 = ["S","W","G","W","G","S","W","S","W","G","W","G","S","W","S","W","G","W","G","S","W","S","W","G","W","G","S","W","S"]
+computer_choice4 = random.choice(lst4)
+
+
+# Chances
+Total_Chance = 10
+number_of_chance = 0
+
+# Points
+computer_point = 0
+player_point = 0
+
+while number_of_chance < Total_Chance :
+    print("\n \n \n")
+    print("S is For Snake or W is For Water or G is For Gun")
+    player_choice = input("Your Choice:  ")
+
+    if computer_choice1 == player_choice:
+        print("You and Compute Choose Same ")
+        print("Tie ")
+        print(f"Your Point is {player_point} and Computer Point is {computer_point}")
+        print(f"\t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t    Chance :  {number_of_chance + 1} of {Total_Chance}")
+
+
+    # Condition For the Snake(S)
+    elif computer_choice2 == sanke and player_choice == gun:
+        player_point = player_point + 1
+        print("You Win")
+        print(f"Your Point is {player_point} and Computer Point is {computer_point}")
+        print(f"\t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t   Chance :  {number_of_chance + 1} of {Total_Chance}")
+
+
+    elif computer_choice3 == sanke and player_choice == water:
+        computer_point = computer_point + 1
+        print("Computer Win")
+        print(f"Your Point is {player_point} and Computer Point is {computer_point}")
+        print(f"\t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t  \t \t \t \t \t \t \t \t  Chance :  {number_of_chance + 1} of {Total_Chance}")
+
+
+    # Condition For the Water(W)
+    elif computer_choice1 == water and player_choice == gun:
+        computer_point = computer_point + 1
+        print("Computer Win")
+        print(f"Your Point is {player_point} and Computer Point is {computer_point}")
+        print(f"\t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t  \t \t \t   Chance :  {number_of_chance + 1} of {Total_Chance}")
+
+
+    elif computer_choice2 == water and player_choice == sanke:
+        player_point = player_point + 1
+        print("You Win")
+        print(f"Your Point is {player_point} and Computer Point is {computer_point}")
+        print(f"\t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t  \t \t \t \t \t  \t \t \t Chance :  {number_of_chance + 1} of {Total_Chance}")
+
+
+    # Condition For Gun(G)
+    elif computer_choice4 == gun and player_choice == water:
+        player_point = player_point + 1
+        print("You  Win")
+        print(f"Your Point is {player_point} and Computer Point is {computer_point}")
+        print(f"\t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t t \t \t \t \t \t \t Chance :  {number_of_chance + 1} of {Total_Chance}")
+
+
+    elif computer_choice1 == gun and player_choice == sanke:
+        computer_point = computer_point + 1
+        print("Computer Win")
+        print(f"Your Point is {player_point} and Computer Point is {computer_point}")
+        print(f"\t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t  \t \t \t \t \t \t \t \t Chance :  {number_of_chance + 1} of {Total_Chance}")
+
+
+    # All the Condition are finishes for the Snake Water Gun
+    else:
+        print("Your Input is not valid")
+        print(f"\t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t  \t  \t \t \t \t \t \t \t\t \t Chance :  {number_of_chance + 1} of {Total_Chance}")
+
+
+    # Adding Chance
+    number_of_chance = number_of_chance + 1
+
+print("\n \n")
+if computer_point > player_point:
+    print("Computer Win")
+    print(f"Your Point is {player_point} and Computer Point is {computer_point}")
+elif computer_point < player_point:
+    print("You Win")
+    print(f"Your Point is {player_point} and Computer Point is {computer_point}")
+else:
+    print("Tie")
+    print(f"Your Point is {player_point} and Computer Point is {computer_point}")
+
+print("Thank You For Playing")
+
+
+
+
+
+
+
+
+
+
